@@ -8,10 +8,10 @@ public class RunApp {
                 "applicationContext.xml"
         );
 
-        Computer computer = context.getBean("computer", Computer.class);
-//       MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//       musicPlayer.playMusic();
-        System.out.println(computer);
+//        Computer computer = context.getBean("computer", Computer.class);
+       MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.playMusic(MusicGenre.ROCK));
+        System.out.println(musicPlayer.playMusic(MusicGenre.CLASSICAL));
 
         context.close();
     }
