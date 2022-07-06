@@ -8,12 +8,7 @@ public class RunApp {
                 "applicationContext.xml"
         );
 
-        Music music = context.getBean("musicBean", Music.class);
-        Music classicMusicBean = context.getBean("classicMusicBean", Music.class);
-
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-        musicPlayer.playMusic();
-        musicPlayer = new MusicPlayer(classicMusicBean);
+        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
         musicPlayer.playMusic();
 
         context.close();

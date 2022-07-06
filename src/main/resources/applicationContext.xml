@@ -6,8 +6,14 @@
     <bean id="musicBean"
           class="ru.mcs.spring.app1.RockMusic">
     </bean>
+
     <bean id="classicMusicBean"
           class="ru.mcs.spring.app1.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayerBean"
+          class="ru.mcs.spring.app1.MusicPlayer">
+        <constructor-arg ref="classicMusicBean" />
     </bean>
 
 </beans>
