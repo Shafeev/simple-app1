@@ -1,13 +1,12 @@
 package ru.mcs.spring.app1;
 
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@Scope("prototype")
 public class ClassicalMusic implements Music {
     List<String> songs = new ArrayList<>();
 
@@ -20,5 +19,15 @@ public class ClassicalMusic implements Music {
     @Override
     public List<String> getSongs() {
         return songs;
+    }
+
+    @Bean(initMethod = "")
+    public void initMethod() {
+        System.out.println("Classic music init");
+    }
+
+    @Bean(destroyMethod = "")
+    public void destroyMethod() {
+        System.out.println("Destroy music init");
     }
 }
