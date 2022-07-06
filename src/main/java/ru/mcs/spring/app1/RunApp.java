@@ -8,11 +8,13 @@ public class RunApp {
                 "applicationContext.xml"
         );
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-        musicPlayer.playMusic();
-
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        RockMusic rockMusic = context.getBean("musicBean", RockMusic.class);
+        System.out.println(rockMusic.getSong());
+//        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
+//        musicPlayer.playMusic();
+//
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
         context.close();
     }
 }

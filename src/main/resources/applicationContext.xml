@@ -6,7 +6,9 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id="musicBean"
-          class="ru.mcs.spring.app1.RockMusic">
+          class="ru.mcs.spring.app1.RockMusic"
+          init-method="doInit"
+          destroy-method="doDestroy">
     </bean>
 
     <bean id="classicMusicBean"
@@ -15,10 +17,10 @@
 
     <bean id="musicPlayerBean"
           class="ru.mcs.spring.app1.MusicPlayer">
-        <property name = "music">
+        <property name="music">
             <list>
-                <ref bean = "musicBean"/>
-                <ref bean = "classicMusicBean"/>
+                <ref bean="musicBean"/>
+                <ref bean="classicMusicBean"/>
             </list>
         </property>
         <property name="name" value="${musicPlayer.name}"/>
