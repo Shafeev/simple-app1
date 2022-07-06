@@ -10,6 +10,11 @@ public class RunApp {
 
         RockMusic rockMusic = context.getBean("musicBean", RockMusic.class);
         System.out.println(rockMusic.getSong());
+
+        RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
+        System.out.println(rockMusic2.getSong());
+
+//        RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
 //        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
 //        musicPlayer.playMusic();
 //

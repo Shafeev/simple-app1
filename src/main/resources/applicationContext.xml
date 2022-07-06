@@ -8,11 +8,13 @@
     <bean id="musicBean"
           class="ru.mcs.spring.app1.RockMusic"
           init-method="doInit"
-          destroy-method="doDestroy">
+          destroy-method="doDestroy"
+          scope="prototype">
     </bean>
 
     <bean id="classicMusicBean"
-          class="ru.mcs.spring.app1.ClassicalMusic">
+          class="ru.mcs.spring.app1.ClassicalMusic"
+          scope="prototype">
     </bean>
 
     <bean id="musicPlayerBean"
