@@ -1,8 +1,6 @@
 package ru.mcs.spring.app1;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class Computer {
     private int id;
     private MusicPlayer musicPlayer;
