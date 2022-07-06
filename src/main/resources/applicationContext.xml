@@ -9,7 +9,8 @@
           class="ru.mcs.spring.app1.RockMusic"
           init-method="doInit"
           destroy-method="doDestroy"
-          scope="prototype">
+          factory-method="getRockMusic"
+    >
     </bean>
 
     <bean id="classicMusicBean"
@@ -17,16 +18,16 @@
           scope="prototype">
     </bean>
 
-    <bean id="musicPlayerBean"
-          class="ru.mcs.spring.app1.MusicPlayer">
-        <property name="music">
-            <list>
-                <ref bean="musicBean"/>
-                <ref bean="classicMusicBean"/>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayerBean"-->
+<!--          class="ru.mcs.spring.app1.MusicPlayer">-->
+<!--        <property name="music">-->
+<!--            <list>-->
+<!--                <ref bean="musicBean"/>-->
+<!--                <ref bean="classicMusicBean"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>

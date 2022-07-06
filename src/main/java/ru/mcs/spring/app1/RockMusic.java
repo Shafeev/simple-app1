@@ -1,6 +1,12 @@
 package ru.mcs.spring.app1;
 
 public class RockMusic implements Music {
+    private RockMusic() {
+    }
+
+    public static RockMusic getRockMusic() {
+        return new RockMusic();
+    }
 
     public void doInit() {
         System.out.println("Initialization");

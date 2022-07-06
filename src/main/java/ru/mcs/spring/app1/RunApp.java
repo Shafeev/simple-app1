@@ -14,6 +14,10 @@ public class RunApp {
         RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
         System.out.println(rockMusic2.getSong());
 
+        boolean value = rockMusic == rockMusic2;
+        System.out.println(value);
+        System.out.println(rockMusic);
+        System.out.println(rockMusic2);
 //        RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
 //        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
 //        musicPlayer.playMusic();
