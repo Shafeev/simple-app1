@@ -4,30 +4,5 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="musicBean"
-          class="ru.mcs.spring.app1.RockMusic"
-          init-method="doInit"
-          destroy-method="doDestroy"
-          factory-method="getRockMusic"
-    >
-    </bean>
-
-    <bean id="classicMusicBean"
-          class="ru.mcs.spring.app1.ClassicalMusic"
-          scope="prototype">
-    </bean>
-
-<!--    <bean id="musicPlayerBean"-->
-<!--          class="ru.mcs.spring.app1.MusicPlayer">-->
-<!--        <property name="music">-->
-<!--            <list>-->
-<!--                <ref bean="musicBean"/>-->
-<!--                <ref bean="classicMusicBean"/>-->
-<!--            </list>-->
-<!--        </property>-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
-
+    <context:component-scan base-package="ru.mcs.spring.app1"/>
 </beans>

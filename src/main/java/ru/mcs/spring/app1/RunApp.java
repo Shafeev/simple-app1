@@ -8,22 +8,15 @@ public class RunApp {
                 "applicationContext.xml"
         );
 
-        RockMusic rockMusic = context.getBean("musicBean", RockMusic.class);
-        System.out.println(rockMusic.getSong());
+        Music music = context.getBean("rockMusic", Music.class);
 
-        RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
-        System.out.println(rockMusic2.getSong());
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
 
-        boolean value = rockMusic == rockMusic2;
-        System.out.println(value);
-        System.out.println(rockMusic);
-        System.out.println(rockMusic2);
-//        RockMusic rockMusic2 = context.getBean("musicBean", RockMusic.class);
-//        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-//        musicPlayer.playMusic();
-//
-//        System.out.println(musicPlayer.getName());
-//        System.out.println(musicPlayer.getVolume());
+
+        Music classicMusic = context.getBean("rockMusic", RockMusic.class);
+        MusicPlayer musicPlayer2 = new MusicPlayer(classicMusic);
+        musicPlayer2.playMusic();
         context.close();
     }
 }

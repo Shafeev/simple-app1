@@ -1,10 +1,7 @@
 package ru.mcs.spring.app1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
 
     private String name;
     private int volume;
@@ -13,18 +10,16 @@ public class MusicPlayer {
     }
 
     // IoC
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList.addAll(musicList);
+    public MusicPlayer(Music music) {
+        this.music = music;
     }
 
     public void playMusic() {
-        for (Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+        System.out.println("Playing: " + music.getSong());
     }
 
-    public void setMusic(List<Music> musicList) {
-        this.musicList.addAll(musicList);
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     public void setName(String name) {
@@ -35,8 +30,8 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public List<Music> getMusic() {
-        return musicList;
+    public Music getMusic() {
+        return music;
     }
 
     public String getName() {
